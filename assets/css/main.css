@@ -608,6 +608,50 @@ input, select, textarea {
 			background-color: rgba(52, 55, 61, 0.607);
 		}
 
+/* Fancy Work section Components */
+
+.project-icon {
+    display: inline-block;
+    width: 47%;
+    margin: 1%;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project-icon:hover {
+    transform: scale(1.05);
+}
+
+.project-icon .icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    z-index: 10;
+}
+
+.project-icon:hover .project-description {
+    display: block;
+}
+
 /* Icon */
 
 	.icon {
@@ -1669,3 +1713,4 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
