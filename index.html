@@ -4,19 +4,18 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <script>
-	function showProject(projectId) {
-		// Hide all project details
-		document.querySelectorAll('.project-details').forEach(function(detail) {
-			detail.style.display = 'none';
-		});
-		// Show the selected project details
-		document.getElementById(projectId).style.display = 'block';
-	}
-	
-	function hideProject(projectId) {
-		// Hide the selected project details
-		document.getElementById(projectId).style.display = 'none';
+	function toggleProject(projectId) {
+		// Get the project details element
+		var projectDetail = document.getElementById(projectId);
+		
+		// Toggle the display style
+		if (projectDetail.style.display === 'block') {
+			projectDetail.style.display = 'none';
+		} else {
+			projectDetail.style.display = 'block';
+		}
 	}
 </script>
 
@@ -36,7 +35,7 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<span class="icon solid fa-heartbeat"></span>
+							<span class="icon solid fa-lightbulb"></span>
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -78,24 +77,24 @@
 							<article id="work">
 								<h2 class="major">Projects</h2>
 								
-								<div class="project-icon" onclick="showProject('dsed')">
+								<div class="project-icon" onclick="toggleProject('dsed')">
 									<span class="icon solid fa-heartbeat"></span>
 									<h3>DSED for In-Field Cardiac Arrests</h3>
 									<p class="project-description">Bringing a powerful defibrillation technique from the lab into the field. Click to learn more.</p>
 								</div>
-								<div class="project-icon" onclick="showProject('braeth')">
+								<div class="project-icon" onclick="toggleProject('braeth')">
 									<span class="icon solid fa-exclamation-triangle"></span>
 									<h3>BRAETH for Cricothyroidotomies</h3>
 									<p class="project-description">The Biomedical Recognizer of Anatomy and Endotracheal Tube Holder offers providers speed and confidence to perform cricothyrotomies. Click to learn more.</p>
 								</div>
 
 								<div class="thin-box" id="dsed" class="project-details major" style="display: none;">
-									<h2>Double Sequential External Defibrillation</h2>
+									<h3>Double Sequential External Defibrillation</h3>
 									<p><b>Role:</b> Project Lead<br/>
 									<b>Project Duration:</b> August 2024 - Present</p>
 									<p>DSED has emerged as a powerful defibrillation technique for the treatment of ventricular fibrillation refractory to conventional defibrillation strategies. DSED, however, currently requires two defibrillators to perform, making it impractical, if not impossible, for EMS to perform in the field.</p>
 									<p>My team of medical students and myself are currently working with physicians, EMS, to design and test a device to allow EMS providers to easily perform DSED without needing a secondary defibrillator, increasing their ability to perform DSED and treat refractory ventricular fibrillation.</p>
-									<button onclick="hideProject('dsed')">Close</button>
+									<button onclick="toggleProject('dsed')">Close</button>
 								</div>
 								<div class="thin-box" id="braeth" class="project-details major" style="display: none;">
 									<h3>Biomedical Recognizer of Anatomy and Endotracheal Tube Holder (BRAETH)</h3>
@@ -103,27 +102,27 @@
 									<b>Project Duration:</b> September 2023 - Present</p>
 									<p>BRAETH was created by a six person team with fellow UMass Amherst biomedical engineering students. Under the supervision of Baystate Medical Center trauma surgeon, Dr. Tovy Kamine, the team and I developed a low-cost 3D printed device to assist providers with the performance of cricothyrotomies, a life-saving procedure for patients who are unable to breathe through their mouth or nose.</p>
 									<p>BRAETH performed extremely well in preliminary testing, reducing the time for providers to quickly perform a cricothyrotomy, and increasing provider confidence with the procedure. The team is currently in the process of filing a provisional patent for BRAETH, and are currently testing the device in larger studies, with the aim of filing for a full patent in the near future. Findings are being presented at ACS: A Dialogue on Surgical Simulation in March of 2025.</p>
-									<button onclick="hideProject('braeth')">Close</button>
+									<button onclick="toggleProject('braeth')">Close</button>
 								</div>
 
-								<div class="project-icon" onclick="showProject('orbit')">
+								<div class="project-icon" onclick="toggleProject('orbit')">
 									<span class="icon solid fa-eye"></span>
 									<h3>Orbital Rim Fracture Repair</h3>
 									<p class="project-description">Offering surgeons precision and confidence in repairing orbital rim fractures. Click to learn more.</p>
 								</div>
-								<div class="project-icon" onclick="showProject('ai')">
+								<div class="project-icon" onclick="toggleProject('ai')">
 									<span class="icon solid fa-user-circle"></span>
 									<h3>Custom Facial Emotion Detection</h3>
 									<p class="project-description">A machine learning algorithm designed custom to its user to more accurately detect user emotions. Click to learn more.</p>
 								</div>
 
 								<div class="thin-box" id="orbit" class="project-details major" style="display: none;">
-									<h2>Adjustable Orbital Rim Implant Surgical Guide</h2>
+									<h3>Adjustable Orbital Rim Implant Surgical Guide</h3>
 									<p><b>Role:</b> Project Lead and Designer<br/>
 									<b>Project Duration:</b> July 2024 - Present</p>
 									<p>Orbital floor fractures are a common facial fracture affecting the inferior orbit, or eye socket. These fractures can cause signficant changes for patients by altering the natural set point of their eyes in their sockets and affecting vision and balance. Current treatment is the placement of a titanium implant under the eye on top of the fracture.</p>
 									<p>Unfortunately, oftentimes these fractures cannot be visualized mid-operation forcing providers to place these implants using only their clinical judgement. I am leading a team of medical students and Oral and Maxiliofacial Surgeons to develop an adjustable surgical guide to assist surgeons in the placement of these implants to reduce complications and improve patient outcomes.</p>
-									<button onclick="hideProject('orbit')">Close</button>
+									<button onclick="toggleProject('orbit')">Close</button>
 								</div>
 								<div class="thin-box" id="ai" class="project-details major" style="display: none;">
 									<h3>Customized Machine Learning Facial Emotion Recognition Algorithm</h3>
@@ -131,11 +130,11 @@
 									<b>Project Duration:</b> September 2023 - May 2024</p>
 									<p>For my honors thesis project, I individually developed a machine learning algorithm trained on custom pictures of a singular subject to recognize human emotions from facial expressions. I tested this model against one trained on a generic set of data, like those currently used in facial emotion detection algorithms.</p>
 									<p>When tested on subjects, the custom model was able to perform on par with the generic model in the detection of happiness and sadness, but significantly outperformed the generic model in detecion of anger. This project reveals a potential mechanism for the emotional state monitoring of patients, especially those who express emotions in unconventional ways, allowing medical providers a noninvasive way to monitor everyone's emotions. I presented a poster of this work at the Massachusetts Undergraduate Research Conference.</p>
-									<button onclick="window.location.href='https://github.com/VarunGop/CustomFacialEmotionDetection';" class= "button small">Learn More</button>
-									<button onclick="hideProject('ai')">Close</button>
+									<button onclick="window.location.href='https://github.com/VarunGop/CustomFacialEmotionDetection';">GitHub Code</button>
+									<button onclick="toggleProject('ai')">Close</button>
 								</div>
 
-								<div class="project-icon" onclick="showProject('ehr')">
+								<div class="project-icon" onclick="toggleProject('ehr')">
 									<span class="icon solid fa-laptop-medical"></span>
 									<h3>ProjectEHR for Medical Education</h3>
 									<p class="project-description">A web-based electronic health record to train medical students. Click to learn more.</p>
@@ -146,7 +145,7 @@
 									<p><b>Role:</b> Front-End Developer<br/>
 									<b>Project Duration:</b> June 2024 - Present</p>
 									<p>I am currently working on a project with fellow medical students to develop a fully web based electronic health record system that can be used by medical students in their early training to increase their familiarity with EHR systems. I am mainly focused on the frontend development, making the UI as similar to current EHR systems as possible. I am additionally helping with the creation and conduction of studies to test the impact of early EHR training on medical student confidence.</p>
-									<button onclick="hideProject('ehr')">Close</button>
+									<button onclick="toggleProject('ehr')">Close</button>
 								</div>
 							</article>
 
